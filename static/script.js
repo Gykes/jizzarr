@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', function() {
     async function fetchData(endpoint) {
         const url = `https://api.theporndb.net/jizzarr/${endpoint}`;
         const headers = {
-            'Authorization': 'Bearer MawQu1vpr2Yizu0UJ7IuPssLUPMty7ZS87NN3e9ma2b11b5c'
+            'Authorization': 'Bearer YOUR API HERE'
         };
 
         try {
