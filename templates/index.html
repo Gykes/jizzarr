@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jizzarr Home</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastify-js/1.6.1/toastify.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.min.js"></script>
+    <style>
+        body {
+            font-family: 'Montserrat', Arial, sans-serif;
+            background-color: #121212;
+            color: #ffffff;
+        }
+        .container {
+            margin-top: 20px;
+            max-width: 80%;
+        }
+        .navbar {
+            margin-bottom: 20px;
+        }
+        .form-control-dark {
+            background-color: #333;
+            border-color: #444;
+            color: #ffffff;
+            width: 100%;
+        }
+        .btn-primary-dark {
+            background-color: #1a73e8;
+            border-color: #1a73e8;
+        }
+        .card {
+            background-color: #1e1e1e;
+            color: #ffffff;
+            border: 1px solid #333;
+        }
+        .card .btn {
+            color: #ffffff;
+        }
+        .input-group-centered {
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+        .search-container {
+            width: 50%;
+        }
+        .nav-column {
+            flex-direction: column;
+        }
+        .nav-link {
+            text-align: center;
+        }
+        .tpdb-logo {
+            max-height: 50px;
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Jizzarr Home</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse nav-column" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url_for('collection') }}">My Collection</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="container">
+        <h1 class="text-center">Search Sites via <img src="{{ url_for('static', filename='tpdblogo.png') }}" alt="TPDB" class="tpdb-logo"></h1>
+        <div class="input-group-centered search-container">
+            <input type="text" class="form-control form-control-dark" id="search-input" placeholder="Enter site name">
+            <button class="btn btn-primary-dark mt-2 w-100" id="search-button">Search</button>
+        </div>
+        <div id="search-results" class="row row-cols-1 row-cols-md-3 g-4"></div>
+        <div id="site-details" class="mt-4"></div>
+        <div id="loading-indicator" class="loading hidden"></div>
+        <div id="scenes-grid" class="mt-4"></div>
+        <div id="pagination" class="mt-4"></div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.1/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastify-js/1.6.1/toastify.min.js"></script>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
